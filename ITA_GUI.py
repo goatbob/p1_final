@@ -27,6 +27,15 @@ def submit():
         f.close()
         del inj
 
+    elif incident_type.get() == "Near Miss":
+        nm = NearMiss(incident_date.get(), incident_time.get(), incident_employee.get(),
+                     nm_type=pass, nm_severity=pass)
+
+        f = open("incidentdata.txt", "a")
+        f.write(f"{nm} \n")
+        f.close()
+        del nm
+
 
 def to_csv(date, time, emp, inc):
     row = [date, time, emp, inc]
@@ -36,6 +45,11 @@ def to_csv(date, time, emp, inc):
         csvwriter = csv.writer(csvfile)
         csvwriter.writerow(row)
         csvfile.close()
+
+
+# def to_database():
+    # call libraries
+    # write to a database
 
 
 def clear_text():

@@ -1,5 +1,5 @@
 """
-program: injury_subclass.py
+program: Injury_subclass.py
 author: kyle godwin
 last date modified: 22 april 2023
 """
@@ -11,6 +11,7 @@ class Injury(Incident):
     def __init__(self, date, time, employee, incident_type="Injury", **kwargs):
         # injury_list = ["fracture", "bruise", "laceration", ""]
         super().__init__(date, time, employee, incident_type)
+        self.injuries = []
         try:
             self.injury_type = kwargs["inj_type"]
             self.body_part = kwargs["body_part"]
