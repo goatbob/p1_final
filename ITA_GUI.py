@@ -35,6 +35,18 @@ def submit():
         f.write(f"{nm} \n")
         f.close()
         del nm
+        
+    elif incident_type.get() == "PIT":
+        pit = PIT(incident_date.get(), incident_time.get(), incident_employee.get(),
+                     collision=pass, experience=pass)
+
+        f = open("incidentdata.txt", "a")
+        f.write(f"{pit} \n")
+        f.close()
+        del pit
+        
+    else:
+        incorrect_label.config(text="Incident type not selected")
 
 
 def to_csv(date, time, emp, inc):
@@ -65,7 +77,7 @@ root.title("ITA")
 root.geometry("300x400")
 
 incident_type = tk.StringVar()
-incident_options = ["Near Miss", "Injury", "Forklift"]
+incident_options = ["Near Miss", "Injury", "PIT"]
 incident_date = tk.StringVar()
 incident_time = tk.StringVar()
 incident_employee = tk.StringVar()
@@ -115,5 +127,8 @@ submit_button = tk.Button(root, text="Submit", command=lambda: [submit(), to_csv
                                                                                  incident_type.get()),
                                                                 clear_text()])
 submit_button.pack()
+
+incorrect_label = tk.Label(root, text="")
+incorrect_label.pack()
 
 root.mainloop()
