@@ -11,12 +11,6 @@ from incident_classes import *
 
 
 def submit():
-    incident_type.get()
-    incident_date.get()
-    incident_time.get()
-    incident_employee.get()
-    injury_type.get()
-    body_part.get()
 
     if incident_type.get() == "Injury":
         inj = Injury(incident_date.get(), incident_time.get(), incident_employee.get(),
