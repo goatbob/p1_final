@@ -1,5 +1,5 @@
 """
-program: ITA_GUI.py
+program: ITA_GUI_v1.py
 author: kyle godwin
 last date modified: 21 april 2023
 
