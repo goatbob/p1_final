@@ -3,7 +3,7 @@ from incident_classes import *
 from incident_classes import Injury as i
 
 
-class InjurySubclass(unittest.TestCase):
+class InjurySubclassTest(unittest.TestCase):
 
     def setUp(self):
         self.inj = i("22 april 2023", "1500", "Maven", inj_type="fracture", body_part="finger")

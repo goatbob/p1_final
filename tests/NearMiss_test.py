@@ -3,7 +3,7 @@ from incident_classes import *
 from incident_classes import NearMiss as n
 
 
-class InjurySubclass(unittest.TestCase):
+class NearMissSubclassTest(unittest.TestCase):
 
     def setUp(self):
         self.nm = n("22 april 2023", "1500", "Maven", nm_type="fall", nm_severity="high")

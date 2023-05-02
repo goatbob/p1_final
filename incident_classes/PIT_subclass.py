@@ -19,7 +19,7 @@ class PIT(Incident):
 
     def __str__(self):
         return f"{self.inc_employee} involved in {self.inc_type} on {self.inc_date} at {self.inc_time}." \
-               f"\n{self.nearMiss_type} of {self.nearMiss_severity} severity." \
+               f"\nWas impact: {self.impact}, with operator experience: {self.experience}." \
                f"\nSubmitted: {self.submit_date}"
 
     def __repr__(self):

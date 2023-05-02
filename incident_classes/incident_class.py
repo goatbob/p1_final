@@ -1,7 +1,7 @@
 """
 program: incident_class.py
 author: kyle godwin
-last date modified: 21 april 2023
+last date modified: 01 may 2023
 """
 import datetime
 
@@ -14,6 +14,10 @@ class Incident:
         self.inc_employee = employee
         self.inc_type = incident_type
         self.submit_date = sub_date
+        self.incidents = []
+
+    #def incidents(self):
+        #self.incidents.append(self.inc_date,)
 
     def __str__(self):
         return f"{self.inc_employee} involved in {self.inc_type} on {self.inc_date} at {self.inc_time}." \
