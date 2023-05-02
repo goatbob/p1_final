@@ -10,11 +10,6 @@ import final_database as db
 
 
 def submit():
-    output_box.insert(tk.END, incident_type.get() + "\n")
-    output_box.insert(tk.END, incident_date.get() + "\n")
-    output_box.insert(tk.END, incident_time.get() + "\n")
-    output_box.insert(tk.END, incident_employee.get() + "\n")
-    output_box.insert(tk.END, incident_description.get() + "\n")
 
     db.create_incident(conn, (incident_date.get(), incident_time.get(), incident_employee.get(),
                               incident_type.get(), incident_description.get()))
@@ -85,16 +80,16 @@ description_entry = tk.Entry(root, textvariable=incident_description, width=25, 
 description_entry.pack()
 
 # enter button
-enter_button = tk.Button(root, text="Enter", command=lambda: [clear_text(), submit()])
+enter_button = tk.Button(root, text="Enter Incident", command=lambda: [submit(), clear_text()])
 enter_button.pack()
-
-# submit button
-submit_button = tk.Button(root, text="Print Injury Database", command=incident_output)
-submit_button.pack()
 
 # output box for database
 database_box = tk.Text(root, width=25, bg="light cyan")
 database_box.pack()
+
+# submit button
+submit_button = tk.Button(root, text="Print Incident Database", command=incident_output)
+submit_button.pack()
 
 
 root.mainloop()
