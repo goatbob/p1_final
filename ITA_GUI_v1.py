@@ -43,19 +43,13 @@ def submit():
         incorrect_label.config(text="Incident type not selected")
 
 
-def to_csv(date, time, emp, inc):
-    row = [date, time, emp, inc]
-    # attributes = ['Date', 'Time', 'Employee', 'Incident Type']
+def to_csv():
+    incident = [incident_date.get(), incident_time.get(), incident_employee.get(), incident_type.get()]
 
     with open("incidentdatabase.csv", "a") as csvfile:
         csvwriter = csv.writer(csvfile)
-        csvwriter.writerow(row)
+        csvwriter.writerow(incident)
         csvfile.close()
-
-
-# def to_database():
-    # call libraries
-    # write to a database
 
 
 def clear_text():
@@ -152,11 +146,7 @@ nmseverity_entry = tk.Entry(root, textvariable=nearmiss_severity, width=25, bg="
 nmseverity_entry.pack()
 
 # submit button
-submit_button = tk.Button(root, text="Submit", command=lambda: [submit(), to_csv(incident_date.get(),
-                                                                                 incident_time.get(),
-                                                                                 incident_employee.get(),
-                                                                                 incident_type.get()),
-                                                                clear_text()])
+submit_button = tk.Button(root, text="Submit", command=lambda: [submit(), to_csv(), clear_text()])
 submit_button.pack()
 
 # label to display message when incident type not selected
