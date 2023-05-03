@@ -11,7 +11,8 @@ class Injury(Incident):
     def __init__(self, date, time, employee, incident_type="Injury", **kwargs):
         # injury_list = ["fracture", "bruise", "laceration", ""]
         super().__init__(date, time, employee, incident_type)
-        self.injuries = []
+        if
+
         try:
             self.injury_type = kwargs["inj_type"]
             self.body_part = kwargs["body_part"]

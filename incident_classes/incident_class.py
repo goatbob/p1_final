@@ -16,8 +16,7 @@ class Incident:
         self.submit_date = sub_date
 
     def __str__(self):
-        return f"{self.inc_employee} involved in {self.inc_type} on {self.inc_date} at {self.inc_time}." \
-               f"\nSubmitted: {self.submit_date}"
+        return f"{self.inc_employee} involved in {self.inc_type} on {self.inc_date} at {self.inc_time}."
 
     def __repr__(self):
         return f"Incident('{self.inc_date}', '{self.inc_time}', '{self.inc_employee}', '{self.inc_type}')"
